@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bwire Digital Ventures & Capital</title>
+  <meta name="viewport" content="width=device-width, initial-scale1.0">
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    /* NAVIGATION */
+    nav {
+      background-color: #111111;
+      padding: 15px 30px;
+      border-bottom: 2px solid #c9a84c;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      color: #c9a84c;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #c9a84c;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 80px 30px;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1400 100%);
+      border-bottom: 1px solid #c9a84c;
+    }
+
+    .hero-tag {
+      color: #c9a84c;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      color: #ffffff;
+      font-size: 42px;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .hero h1 span {
+      color: #c9a84c;
+    }
+
+    .hero p {
+      color: #aaaaaa;
+      font-size: 18px;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* BUTTONS */
+    .btn-gold {
+      background-color: #c9a84c;
+      color: #0a0a0a;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-gold:hover {
+      background-color: #e8c76a;
+    }
+
+    .btn-outline-gold {
+      background-color: transparent;
+      color: #c9a84c;
+      padding: 14px 35px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      border: 2px solid #c9a84c;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-outline-gold:hover {
+      background-color: #c9a84c;
+      color: #0a0a0a;
+    }
+
+    /* SECTION STYLES */
+    .section {
+      padding: 70px 30px;
+    }
+
+    .section-dark {
+      background-color: #0f0f0f;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;  
+    }
+
+    .section-title h2 {
+      color: #c9a84c;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #aaaaaa;
+      font-size: 16px;
+    }
+
+    /* ABOUT */
+    .about-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* PROFILE PHOTO */
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #c9a84c;
+      object-fit: cover;
+      margin-bottom: 25px;
+    }
+    
+    .about-content p {
+      color: #cccccc;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .about-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .stats {
+      text-align: center;
+    }
+
+    .stat-number {
+      color: #c9a84c;
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    .stat-label {
+      color: #aaaaaa;
+      font-size: 14px;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background-color: #111111;
+      border: 1px solid #333333;
+      border-radius: 15px;
+      padding: 30px;
+      width: 300px;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      border-color: #c9a84c;
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: #c9a84c;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .service-price {
+      color: #c9a84c;
+      font-size: 15px;
+      font-weight: bold;
+      border-top: 1px solid #333333;
+      padding-top: 15px;
+      letter-spacing: 1px;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      background-color: #111111;
+      border: 1px solid #333333;
+      border-radius: 12px;
+      padding: 25px 35px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      min-width: 160px;
+    }
+
+    .contact-card {
+      flex: 1 1 160px;
+      max-width: 200px;
+    }
+    
+
+    .contact-card:hover {
+      border-color: #c9a84c;
+      transform: translateY(-3px);
+    }
+
+    .contact-icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: #c9a84c;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #111111;
+      border-top: 1px solid #c9a84c;
+      padding: 30px;
+      text-align: center;
+    }
+
+    footer p {
+      color: #aaaaaa;
+      font-size: 14px;
+    }
+
+    footer span {
+      color: #c9a84c;
+    }
+
+    /* RESOPONSIVE */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .nav-logo {
+        font-size: 14px;
+      }
+
+      .nav-links a {
+        margin-left: 10px;
+        font-size: 12px;
+      }
+
+      .service-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-logo">💎 Bwire Digital Ventures & Capital</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <p class="hero-tag">⭐⭐⭐ Professional Services</p>
+    <p class="hero-tag">💻 Helping Business with Bwire Digital Ventures & Capital</p>
+    <h1>Building <span>Wealth</span> &<br>Digital <span>Futures</span></h1>
+    <p>Web Development & Graphic Design • Forex Trading Mentorship • Architectural & Structural Design • Crypto & stock Investment • Web3 & Blockchain Design</p>
+    <div class="hero-buttons">
+      <a href="#services" class="btn-gold">View Services 💼</a>
+      <a href="#contact" class="btn-outline-gold">Get In Touch 📞</a>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section" id="about">
+    <div class="section-title">
+      <h2>About Anthony Bwire</h2>
+      <p>The mind behind Bwire Digital Ventures & Capital</p>
+    </div>
+    <div class="about-content">
+      <img src="bwireanthony.jpg" alt="Anthony Bwire" class="profile-photo">
+      <p>I am Anthony Bwire - a civil Engineering student, Web3 & Blockchain Developer, Web & Graphic Designer, Forex Trader and an Investment enthusiast based in Kenya</p>
+      <p>My mission is simple - to help individuals and businesses build their digital presence, grow their wealth, and understand the future of finance and technology.</p>
+      <p>Whether you need a professional website Designer, forex mentorship and Classes, Graphic designs, architectural & Structural designs, or Crypto & Stock investment advice - Bwire Digital Ventures & Capital has you covered.</p>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-label">5+</div>
+          <div class="stat-label">Services Offered</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Based in Kenya </d>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="section section-dark" id="services">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Everything you need to grow digitally and financially</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🌍</div>
+        <h3>Web Development & Graphic Design</h3>
+        <p>Professional websites for business, portfolios, and personal brands , Graphic Design. Modern, responsive and built to impress.</p>
+        <div class="service-price">Starting from $50 USD</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📈📉</div>
+        <h3>Forex Trading Consultation</h3>
+        <p>Learn supply and demand trading strategies. Virtual mentorship for beginner and intermediate traders.</p>
+        <div class="service-price">Starting from $35 USD</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <h3>Architectural Designs</h3>
+        <P>Professional architectural drawings and designs. Residential and commercial projects handled with precision.</P>
+        <div class="service-price">Starting from $100 USD</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💰</div>
+        <h3>Crypto & Investment Guidance</h3>
+        <p>Navigate the world of Cryptocurrency, stocks and investments with confidence. Build your portfolio the right way.</p>
+        <div class="service-price">Starting from $25 USD</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⛓️</div>
+        <h3>Web3 Development</h3>
+        <p>Decentralised applications, smartcontracts, and blockchain solutions. The future of the internet is here.</p>
+        <div class="service-price">Starting from $10,000 USD</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section" id="contact">
+    <div class="section-title">
+      <h2>Get in Touch</h2>
+      <p>Ready to work together? Reach out through any of these channels</p>
+    </div>
+    <div class="contact-grid">
+
+      <a href="https://wa.me/254110177022" class="contact-card" target="_blank">
+        <div class="contact-icon">💬</div>
+        <p>WhatsApp</p>
+      </a>
+
+      <a href="mailto:bwireanthonygpa2225@gmail.com" class="contact-card" target="_blank">
+        <div class="contact-icon">📧</div>
+        <p>Email</p>
+      </a>
+
+      <a href="https://www.upwork.com" class="contact-card" target="_blank">
+        <div class="contact-icon">💼</div>
+        <p>Upwork</p>
+      </a>
+
+      <a href="https://www.x.com" class="contact-card" target="_blank">
+        <div class="contact-icon">🐦</div>
+        <p>X (Twitter)</p>
+      </a>
+
+      <a href="https://www.linkedln.com" class="contact-card" target="_blank">
+        <div class="contact-icon">🔗</div>
+        <p>linkedln</p>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <span>Bwire Digital Venture & Capital</span> - All Rights Reserved</p>
+    <p>If you can't make money while you sleep ,you'll work until you die😎</p>
+    <p style="margin-top: 8px;">Built with 💎 by Anthony Bwire</p>
+  </footer>
+
+</body>
+</html>
